@@ -1,3 +1,4 @@
+/* MOBILE 320 x 568*/
 @media all and (max-width: 320px) {
    body{
    font-size: 14px;
@@ -11,7 +12,59 @@
 		margin: 0 0 5px;
 	}
 
-
-
+.Accordion {
+	max-width: 300px;
+	margin: 20px;
+	color: black;
 }
-/* с мобилкой закончили*/
+
+.PopIt {
+	border-top: 2px solid rgba(0, 0, 0, 0.2);
+}
+
+.popUp {
+	display: block;
+	font-size: 16;
+	padding: 10px;
+	margin: 5px;
+}
+
+.popIn {
+	appearance: none;
+	position: absolute;
+	width: 0;
+	height: 0;
+}
+
+.mem {
+	display: none;
+}
+
+h1.Accordion {
+	font-size: 20px;
+}
+
+.popIn:checked + .mem {
+	display: block;
+}
+}
+
+/* TABLET 3820 x 1180*/
+
+
+/* DESKTOP 1920 x 1080*/
+@media all and (max-width: 1920px) and (min-width: 1180) {
+.popUp {
+	display: block;
+	font-size: 16;
+	cursor: pointer;
+}
+
+.PopIt {
+	color: blue;
+	border-top: 2px solid rgba(0, 0, 0, 0.2);
+}
+.Accordion:hover {
+	color: black;
+	}
+}
