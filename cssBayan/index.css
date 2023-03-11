@@ -1,117 +1,238 @@
-/* ! MOBILE 320 x 568*/
-@media (max-width: 320px) {
-   body{
-   font-size: 12px;
-	font-family: Arial, Helvetica, sans-serif;
-	font-weight: bold;
-	background-color:rgb(193, 208, 176);
+/* ! MOBILE 320 x 568-------------------------------------------------------------------------------
+! -------------------------------------------------------------------------------
+ !-------------------------------------------------------------------------------
+*/
+@media (max-width: 321px) {
+   body {
+		font-size: 10px;
+		font-family: Arial, Helvetica, sans-serif;
+		font-weight: bold;
+		background-color:rgb(193, 208, 176);
+		}
 
-   }
-
-	p {
-		margin: 0 0 5px;
+	.Accordion {
+		max-width: 320px;
+		margin: 10px;
 	}
 
-.Accordion {
-	max-width: 300px;
-	margin: 20px;
-	color: black;
-}
+	.PopIt {
+		border-top: 3px solid rgba(0, 0, 0, 0.2);
+		color: black;
+	}
 
-.PopIt {
-	border-top: 2px solid rgba(0, 0, 0, 0.2);
-}
+	.popUp {
+		display: block;
+		font-size: 18;
+		padding: 5px;
+		margin: 5px;
+		position: relative;
+	}
 
-.popUp {
+	.popIn {
+		appearance: none;
+		position: absolute;
+		width: 0;
+		height: 0;
+	}
+
+	.mem {
+		display: none;
+		margin: auto;
+	}
+
+	img {
+		width: 150px;
+		display: block;
+		margin-left: auto;
+		margin-right: auto;
+		animation-name: memTime;
+		animation-duration: 1s;
+	}
+
+	h1.Accordion {
+		font-size: 60px;
+	}
+
+	not(.popUp):hover {
+	color: blue;
+		}
+
+	.popIn:checked ~ .mem {
 	display: block;
-	font-size: 14;
-	padding: 10px;
-	margin: 5px;
-	position: relative;
-}
+	margin: 0 auto;
+	transform: scaleZ(0.1);
+	}
 
-.popIn {
-	appearance: none;
-	position: absolute;
+	/* чтобы оставались черным текстом уже развернутые*/
+	.popIn:checked ~ .popUp {
+		color: black;
+	}
+
+	/* делаю крестик при нажатии*/
+	.popIn:checked ~ .popUp:after {
+		content: "\2716";
+		display: block;
+		position: absolute;
+		top: 50%;
+		right: 40px;
+		transform: translateY(-50%);
+	}
+
+	/* делаю плюсик в обычном состоянии*/
+	.popUp:after {
+		content: "\271A";
+		display: block;
+		position: absolute;
+		top: 50%;
+		right: 40px;
+		transform: translateY(-50%);
+	}
+
+	@keyframes memTime {
+		0%{
 	width: 0;
-	height: 0;
-}
-
-.mem {
-	display: none;
-	transition: wall 3s ease-out;
-}
-
-img {
+		}
+		100%{
 	width: 150px;
+		}
+	}
 }
 
-#pop1 {
-	margin-left: auto;
-	margin-right: auto;
+/* ! TABLET 820 x 1180-------------------------------------------------------------------------------
+! -------------------------------------------------------------------------------
+ !-------------------------------------------------------------------------------
+*/
+@media (min-width: 321px) and (max-width: 819px) {
+	body {
+		font-size: 20px;
+		font-family: Arial, Helvetica, sans-serif;
+		font-weight: bold;
+		background-color:rgb(193, 208, 176);
+		}
+
+	.Accordion {
+		max-width: 800px;
+		margin: 5px;
+	}
+
+	.PopIt {
+		border-top: 3px solid rgba(0, 0, 0, 0.2);
+		color: black;
+	}
+
+	.popUp {
+		display: block;
+		font-size: 20px;
+		padding: 5px;
+		margin: 5px;
+		position: relative;
+	}
+
+	.popIn {
+		appearance: none;
+		position: absolute;
+		width: 0;
+		height: 0;
+	}
+
+	.mem {
+		display: none;
+		margin: auto;
+	}
+
+	img {
+		width: 200px;
+		display: block;
+		margin-left: auto;
+		margin-right: auto;
+		animation-name: memTime;
+		animation-duration: 1s;
+	}
+
+	h1.Accordion {
+		font-size: 60px;
+	}
+
+	not(.popUp):hover {
+	color: blue;
+		}
+
+	.popIn:checked ~ .mem {
+		display: block;
+	margin: 0 auto;
+	transform: scaleZ(0.1);
+	}
+
+	/* чтобы оставались черным текстом уже развернутые*/
+	.popIn:checked ~ .popUp {
+		color: black;
+	}
+
+	/* делаю крестик при нажатии*/
+	.popIn:checked ~ .popUp:after {
+		content: "\2716";
+		display: block;
+		position: absolute;
+		top: 50%;
+		right: 15px;
+		transform: translateY(-50%);
+	}
+
+	/* делаю плюсик в обычном состоянии*/
+	.popUp:after {
+		content: "\271A";
+		display: block;
+		position: absolute;
+		top: 50%;
+		right: 15px;
+		transform: translateY(-50%);
+	}
+	@keyframes memTime {
+		0%{
+	width: 0;
+		}
+		100%{
+	width: 300px;
+		}
+	}
 }
+/* ! DESKTOP 1920 x 1080--------------------------------------------------------------------------------
+! -------------------------------------------------------------------------------
+!-------------------------------------------------------------------------------
+*/
 
-h1.Accordion {
-	font-size: 20px;
-}
+@media (min-width: 819px) {
 
-.popIn:checked ~ .mem {
-	display: block;
-margin-left: 20%;
-margin-right: 30%;
-}
+	a {
+		text-decoration:none;
+		color:blue
+	 }
 
-.popIn:checked ~ .popUp {
-	color: black;
-}
-
-.popIn:checked ~ .popUp:after {
-	content: "\2716";
-	display: block;
-	position: absolute;
-	top: 50%;
-	right: 15px;
-	transform: translateY(-50%);
-}
-
-.popUp:after {
-	content: "\271A";
-	display: block;
-	position: absolute;
-	top: 50%;
-	right: 15px;
-	transform: translateY(-50%);
-}
-
-}
-
-/* ! TABLET 3820 x 1180*/
-
-/* ! DESKTOP 1920 x 1080*/
-
-@media (min-width: 1180px) {
-body {
-   font-size: 32px;
+	body {
+   font-size: 26px;
 	font-family: Arial, Helvetica, sans-serif;
 	font-weight: bold;
 	background-color:rgb(193, 208, 176);
    }
+
+
+
 
 .Accordion {
 	max-width: 1600px;
-	margin: 50px;
+	margin: 70px;
 }
 
 .PopIt {
 	border-top: 3px solid rgba(0, 0, 0, 0.2);
-	color: black;
+	color: blue;
 }
 
 .popUp {
 	display: block;
 	font-size: 18;
-	padding: 30px;
-	margin: 15px;
+	padding: 20px;
+	margin: 10px;
 	position: relative;
 	cursor: pointer;
 }
@@ -127,38 +248,37 @@ body {
 	display: none;
 	margin: auto;
 	cursor: pointer;
-	/*transform: none;
-
-	transition: all 3s ease-out;
-	 animation: ani 2.5s forwards;
-	*/
 }
+
 
 img {
 	width: 300px;
 	display: block;
 	margin-left: auto;
 	margin-right: auto;
+	animation-name: memTime;
+	animation-duration: 1s;
 }
+
+
 
 h1.Accordion {
 	font-size: 60px;
 }
 
-not(.popUp):hover {
-color: blue;
-	}
 
 .popIn:checked ~ .mem {
 	display: block;
 margin: 0 auto;
-/*transform: scaleZ(0.1);*/
+transform: scaleZ(0.1);
 }
 
+/* чтобы оставались черным текстом уже развернутые*/
 .popIn:checked ~ .popUp {
 	color: black;
 }
 
+/* делаю крестик при нажатии*/
 .popIn:checked ~ .popUp:after {
 	content: "\2716";
 	display: block;
@@ -168,6 +288,7 @@ margin: 0 auto;
 	transform: translateY(-50%);
 }
 
+/* делаю плюсик в обычном состоянии*/
 .popUp:after {
 	content: "\271A";
 	display: block;
@@ -176,6 +297,19 @@ margin: 0 auto;
 	right: 40px;
 	transform: translateY(-50%);
 }
+
+@keyframes memTime {
+	0%{
+width: 0;
+	}
+	100%{
+width: 300px;
+	}
+}
+.Accordion:hover>.PopIt{
+color: black;
+}
+
 
 }
 
