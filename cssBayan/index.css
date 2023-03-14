@@ -40,7 +40,7 @@
 		margin: auto;
 	}
 
-	img {
+	.mem img {
 		width: 150px;
 		display: block;
 		margin-left: auto;
@@ -57,7 +57,7 @@
 	color: blue;
 		}
 
-	.popIn:checked ~ .mem {
+	.popIn:checked ~ .popUp .mem {
 	display: block;
 	margin: 0 auto;
 	transform: scaleZ(0.1);
@@ -68,25 +68,6 @@
 		color: black;
 	}
 
-	/* делаю крестик при нажатии*/
-	.popIn:checked ~ .popUp:after {
-		content: "\2716";
-		display: block;
-		position: absolute;
-		top: 50%;
-		right: 40px;
-		transform: translateY(-50%);
-	}
-
-	/* делаю плюсик в обычном состоянии*/
-	.popUp:after {
-		content: "\271A";
-		display: block;
-		position: absolute;
-		top: 50%;
-		right: 40px;
-		transform: translateY(-50%);
-	}
 
 	@keyframes memTime {
 		0%{
@@ -140,7 +121,7 @@
 		margin: auto;
 	}
 
-	img {
+	.mem img {
 		width: 200px;
 		display: block;
 		margin-left: auto;
@@ -157,7 +138,7 @@
 	color: blue;
 		}
 
-	.popIn:checked ~ .mem {
+	.popIn:checked ~ .popUp .mem {
 		display: block;
 	margin: 0 auto;
 	transform: scaleZ(0.1);
@@ -168,25 +149,7 @@
 		color: black;
 	}
 
-	/* делаю крестик при нажатии*/
-	.popIn:checked ~ .popUp:after {
-		content: "\2716";
-		display: block;
-		position: absolute;
-		top: 50%;
-		right: 15px;
-		transform: translateY(-50%);
-	}
 
-	/* делаю плюсик в обычном состоянии*/
-	.popUp:after {
-		content: "\271A";
-		display: block;
-		position: absolute;
-		top: 50%;
-		right: 15px;
-		transform: translateY(-50%);
-	}
 	@keyframes memTime {
 		0%{
 	width: 0;
@@ -250,8 +213,25 @@
 	cursor: pointer;
 }
 
+.myspan {
+	display: flex;
+	flex-direction: row;
+	flex-wrap: nowrap;
+	justify-content: space-between;
+}
 
-img {
+.myspan img {
+		width: 1rem;
+		visibility: visible;
+		transform: rotate(45deg);
+		transition: 0.2s all;
+	}
+
+.popIn:checked + .popUp .myspan img {
+		transform: rotate(0deg);
+	}
+
+.mem img {
 	width: 300px;
 	display: block;
 	margin-left: auto;
@@ -267,7 +247,7 @@ h1.Accordion {
 }
 
 
-.popIn:checked ~ .mem {
+.popIn:checked ~ .popUp .mem {
 	display: block;
 margin: 0 auto;
 transform: scaleZ(0.1);
@@ -279,24 +259,7 @@ transform: scaleZ(0.1);
 }
 
 /* делаю крестик при нажатии*/
-.popIn:checked ~ .popUp:after {
-	content: "\2716";
-	display: block;
-	position: absolute;
-	top: 50%;
-	right: 40px;
-	transform: translateY(-50%);
-}
 
-/* делаю плюсик в обычном состоянии*/
-.popUp:after {
-	content: "\271A";
-	display: block;
-	position: absolute;
-	top: 50%;
-	right: 40px;
-	transform: translateY(-50%);
-}
 
 @keyframes memTime {
 	0%{
